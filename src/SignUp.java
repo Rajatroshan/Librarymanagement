@@ -214,16 +214,23 @@ public class SignUp extends javax.swing.JFrame {
                 pst.setString(5, jTextField5.getText());
                 pst.execute();
                 JOptionPane.showMessageDialog(null, "Data Recorded to Database");
+                
             }
             else{
                 JOptionPane.showMessageDialog(null, "Database Connection is not properly Inititlized");
             }
+            
             
         }
         catch(Exception e){
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e);
         }
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField4.setText("");
+            jTextField5.setText("");
+           
         
         
     }//GEN-LAST:event_jButton2ActionPerformed

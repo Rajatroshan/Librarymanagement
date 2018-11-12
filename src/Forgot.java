@@ -2,6 +2,7 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -33,7 +34,48 @@ public class Forgot extends javax.swing.JFrame {
         String forgotUsername=jTextField1.getText();
         String sql="select * from Account where Username='"+forgotUsername+"'";
         
+        try{
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+        
+            if(rs.next()){
+                jTextField2.setText(rs.getString(2));
+                jTextField3.setText(rs.getString(4));
+                rs.close();
+                pst.close();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Username not exists");
+            }
+            
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        
     }
+    
+    public void Retrive(){
+        String retriveAnswer = jTextField4.getText();
+        String sql = "select * from Account where Answer='"+retriveAnswer+"'";
+        
+        try{
+        pst = conn.prepareStatement(sql);
+        rs= pst.executeQuery();
+            if(rs.next()){
+            jTextField5.setText(rs.getString(3));
+            }
+        }
+            
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        
+    }
+    
+    
+    
+    
     
 
     /**
@@ -80,6 +122,11 @@ public class Forgot extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton3.setText("Back");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
@@ -194,6 +241,9 @@ public class Forgot extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Retrive();
+        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -202,7 +252,15 @@ public class Forgot extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Search();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+       setVisible(false);
+        Login ob=new Login();
+        ob.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
