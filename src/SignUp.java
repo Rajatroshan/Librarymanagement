@@ -213,7 +213,7 @@ public class SignUp extends javax.swing.JFrame {
                 pst.setString(4, (String) jComboBox1.getSelectedItem());
                 pst.setString(5, jTextField5.getText());
                 pst.execute();
-                JOptionPane.showMessageDialog(null, "New Account Created");
+                JOptionPane.showMessageDialog(null, "Data Recorded to Database");
             }
             else{
                 JOptionPane.showMessageDialog(null, "Database Connection is not properly Inititlized");

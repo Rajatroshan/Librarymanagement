@@ -18,11 +18,12 @@ public class JavaConnection {
     public static Connection ConnectDb(){
         try{
             Class.forName("org.sqlite.JDBC");
-            Connection conn=DriverManager.getConnection("jdbc.sqlite");
+            Connection conn=DriverManager.getConnection("jdbc:sqlite:C:\\Users\\acer\\Desktop\\LibraryManagementSystem\\LibraryData.sqlite");
             return conn;
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null,e);
+            //JOptionPane.showMessageDialog(null, e);
+            e.printStackTrace();
             return null;
         }
     }
