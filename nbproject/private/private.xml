@@ -5,9 +5,13 @@
         <group>
             <file>file:/C:/Users/acer/Desktop/LibraryManagementSystem/src/Home.java</file>
             <file>file:/C:/Users/acer/Desktop/LibraryManagementSystem/src/Login.java</file>
-            <file>file:/C:/Users/acer/Desktop/LibraryManagementSystem/src/Forgot.java</file>
             <file>file:/C:/Users/acer/Desktop/LibraryManagementSystem/src/JavaConnection.java</file>
+            <file>file:/C:/Users/acer/Desktop/LibraryManagementSystem/src/Forgot.java</file>
             <file>file:/C:/Users/acer/Desktop/LibraryManagementSystem/src/SignUp.java</file>
+            <file>file:/C:/Users/acer/Desktop/LibraryManagementSystem/src/NewStudent.java</file>
+            <file>file:/C:/Users/acer/Desktop/LibraryManagementSystem/src/NewBook.java</file>
+            <file>file:/C:/Users/acer/Desktop/LibraryManagementSystem/src/ReturnBook.java</file>
+            <file>file:/C:/Users/acer/Desktop/LibraryManagementSystem/src/IssueBook.java</file>
         </group>
     </open-files>
 </project-private>

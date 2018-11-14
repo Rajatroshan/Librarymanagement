@@ -22,8 +22,8 @@ public class JavaConnection {
             return conn;
         }
         catch(Exception e){
-            //JOptionPane.showMessageDialog(null, e);
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e);
+            
             return null;
         }
     }
