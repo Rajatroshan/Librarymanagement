@@ -94,6 +94,11 @@ public class NewBook extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4" }));
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Publisher");
@@ -221,6 +226,7 @@ public class NewBook extends javax.swing.JFrame {
         // TODO add your handling code here:
         String sql="Insert into Books (Book_ID,Name,Edition,Publisher,Price,Pages) values (?,?,?,?,?,?)";
         
+        
         try{
             pst= conn.prepareStatement(sql);
             pst.setString(1, jTextField1.getText());
@@ -250,6 +256,10 @@ public class NewBook extends javax.swing.JFrame {
         jTextField5.setText("");
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
